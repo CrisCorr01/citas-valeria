@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Un sábado para ti ❤️</title>
+  <meta name="description" content="Cuatro posibilidades para un sábado especial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">SÁBADO · 29 DE AGOSTO DE 2026</span>
+      <h1>Un sábado<br><em>para ti</em> ❤️</h1>
+      <p>Cuatro posibilidades.<br>Cuatro formas distintas de hacer de este sábado algo nuestro.</p>
+      <button class="primary-btn" onclick="document.getElementById('citas').scrollIntoView({behavior:'smooth'})">Descubrir las citas ✨</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="citas" class="section">
+      <div class="section-heading">
+        <span class="eyebrow">ELIGE TU PLAN</span>
+        <h2>¿Cuál quieres vivir conmigo?</h2>
+        <p>Abre cada una. Hay planes, lugares y alguna que otra intención escondida.</p>
+      </div>
+      <div id="cards" class="cards-grid"></div>
+    </section>
+    <section class="closing">
+      <div class="closing-inner">
+        <span>♡</span>
+        <h2>No importa cuál elijas.</h2>
+        <p>Lo importante es que ese día podamos mirar atrás y pensar: qué bueno que lo hicimos.</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    <article class="modal-card">
+      <button class="close-btn" aria-label="Cerrar" onclick="closeModal()">×</button>
+      <img id="modalImage" src="" alt="" class="modal-image">
+      <div class="modal-body">
+        <span id="modalNumber" class="eyebrow"></span>
+        <h2 id="modalTitle"></h2>
+        <div id="modalStars" class="stars"></div>
+        <p id="modalVerdict" class="review-verdict"></p>
+        <p id="modalQuote" class="quote"></p>
+
+        <div class="details">
+          <div class="detail"><span>📅</span><div><small>Fecha</small><strong id="modalDate"></strong></div></div>
+          <div class="detail"><span>🕐</span><div><small>Hora</small><strong id="modalTime"></strong></div></div>
+          <div class="detail"><span>📍</span><div><small>Lugar</small><strong id="modalPlace"></strong></div></div>
+        </div>
+
+        <h3>Sobre este plan</h3>
+        <p id="modalDescription"></p>
+
+        <div class="map-wrap">
+          <div class="map-heading">
+            <div><small>UBICACIÓN</small><h3 id="modalAddress"></h3></div>
+            <span>📍</span>
+          </div>
+          <iframe id="modalMap" title="Mapa de ubicación" loading="lazy"></iframe>
+          <a id="modalDirections" class="map-btn" target="_blank" rel="noopener">Cómo llegar →</a>
+        </div>
+
+        <h3>Detalles</h3>
+        <ul id="modalFeatures" class="features"></ul>
+        <p id="modalExtra" class="extra"></p>
+
+        <button class="primary-btn full" onclick="closeModal()">Me gusta esta cita ❤️</button>
+      </div>
+    </article>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

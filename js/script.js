@@ -1,86 +1,402 @@
-const citas = [
-{
- id:1,title:"El Purgatorio 🔥",rating:4,image:"images/cita-01.jpg",
- short:"Comida, bebida, ¿pecar juntos?",
- verdict:"Mi veredicto: ★★★★☆. Las reseñas recientes rondan 4,1/5: destacan la comida, el ambiente, el servicio y, sobre todo, la propuesta de coctelería. Para una cita, me parece una opción con mucha personalidad.",
- quote:"Entre el cielo y el pecado, supongo que siempre elegiría sentarme contigo... y ver hasta dónde nos lleva la tentación.",
- date:"Sábado, 29 de agosto de 2026",time:"4:00 – 5:00 PM",place:"El Purgatorio",
- address:"Cl. 74 #02-86, Bogotá",lat:4.655261938913333,lng:-74.05143358702394,
- description:"Un lugar pensado para experimentar: café, destilados, vinos y coctelería con una propuesta bastante menos convencional que la típica salida. La idea es empezar la tarde entre algo rico para comer y una bebida que nos saque un poco de la rutina. Y sí... quiero que esta sea de esas citas en las que nos miramos, sonreímos y sabemos que la conversación puede ponerse peligrosamente interesante. El lugar se describe como una experiencia sensorial y las reseñas recientes resaltan su ambiente, comida y bebidas.",
- features:["🔥 Tú y yo tomando algo fuerte","🍸 Probar una bebida diferente y dejarnos sorprender","😏 Ver cuánto podemos portarnos mal sin que nadie se entere"],
- extra:"Nivel de misterio: medio. No necesitas saber exactamente cómo termina la tarde; solo necesitas llegar conmigo."
-},
-{
- id:2,title:"Y si lo volvemos a intentar",rating:4,image:"images/cita-02.jpg",
- short:"El plan que quedó pendiente la primera vez.",
- verdict:"Mi veredicto: ★★★★☆. Galactika aparece alrededor de 4,1/5 y las reseñas destacan su ambientación, música, comida, cócteles y la experiencia de jugar bolos con un concepto diferente. Eso sí: algunas reseñas advierten que puede haber espera en días concurridos.",
- quote:"La primera vez no nos alcanzó el tiempo. Esta vez quiero que nos alcance para todo: jugar, reír, comer, ver una película y quedarme contigo hasta que se acabe el día.",
- date:"Sábado, 29 de agosto de 2026",time:"Todo el día",place:"Galactika Bolo Club · Plaza Central",
- address:"Cra. 65 #11-50, C.C. Plaza Central, Local 2-32, Bogotá",lat:4.63195,lng:-74.11537,
- description:"La primera vez fuimos, estaba demasiado lleno y el plan quedó a medias. Así que esta vez quiero hacerlo bien: volver a intentarlo y convertirlo en un día completo. Bolos, algo rico para comer, una película, helado, caminar por el centro comercial y, sobre todo, tener tiempo suficiente para disfrutarlo contigo sin estar pendientes de que se nos acaba la tarde. Galactika tiene una ambientación temática y reseñas que destacan la experiencia diferente, aunque conviene considerar que los fines de semana puede haber espera.",
- features:["🎳 Bolos y revancha pendiente","🎬 Película juntos","🍦 Helado y algo de comer","😂 Una cantidad irresponsable de risas"],
- extra:"Nivel de misterio: ninguno. Esta vez sabes exactamente a lo que vienes: a divertirte conmigo."
-},
-{
- id:3,title:"Achiras",rating:5,image:"images/cita-03.jpg",
- short:"¿Y si vamos juntos por las achiras que te gustan?",
- verdict:"Mi veredicto: ★★★★★. No depende de una reseña de un establecimiento: el encanto está en convertir una simple compra en una pequeña aventura por carretera.",
- quote:"Si para encontrar algo que te gusta tengo que recorrer kilómetros contigo, entonces no son kilómetros: son tiempo que quiero pasar a tu lado.",
- date:"Sábado, 29 de agosto de 2026",time:"Todo el día",place:"La Mesa, Cundinamarca",
- address:"La Mesa, Cundinamarca, Colombia",lat:4.6323,lng:-74.4634,
- description:"Esta es la que convierte una cosa tan sencilla como ir por unas achiras en una excusa perfecta para escapar de la rutina. Salimos juntos, hacemos carretera, comemos algo, buscamos esas achiras que tanto te gustan y dejamos que el día nos vaya llevando. Si se puede, podemos sumar piscina, helado y una parada en otro municipio. La gracia no está únicamente en llegar: está en el viaje, en la música, en hablar de cualquier cosa y en descubrir un lugar nuevo juntos.",
- features:["🚗 Viaje juntos por carretera","🥔 Ir directamente por las achiras que te gustan","🍦 Helado y comida","🏊 Piscina si el plan lo permite","🗺️ Conocer otro rincón de Cundinamarca"],
- extra:"Nivel de misterio: ninguno. La sorpresa es el viaje mismo."
-},
-{
- id:4,title:"El postre más rico",rating:5,image:"images/cita-04.jpg",
- short:"Un postre nuevo, un municipio nuevo y todo un día contigo.",
- verdict:"Mi veredicto: ★★★★★. La gracia está en que el postre es solo la excusa: Bojacá nos permite sumar gastronomía, carretera, historia y naturaleza en el mismo plan.",
- quote:"Dicen que vamos por un postre. Yo sé la verdad: voy porque cualquier lugar se vuelve especial cuando el camino lo hacemos juntos.",
- date:"Sábado, 29 de agosto de 2026",time:"Todo el día",place:"Bojacá, Cundinamarca",
- address:"Bojacá, Cundinamarca, Colombia",lat:4.73248,lng:-74.34167,
- description:"La misión oficial: ir por una cuajada con dulce. La misión real: robarnos un día completo para nosotros. Podemos comer, tomar un helado, conocer Bojacá y después acercarnos a las Piedras de Chivo Negro, un sitio de interés cultural y ambiental con formaciones rocosas y arte rupestre. Las reseñas disponibles le dan 4/5 al atractivo, aunque advierten que no tiene caminos muy definidos ni señalización, así que la visita merece hacerse con calma y con el lugar en buenas condiciones.",
- features:["🍮 Buscar la cuajada con dulce","🍦 Helado y comida","🚗 Viajar juntos","🪨 Conocer las Piedras de Chivo Negro","🗺️ Visitar otro municipio"],
- extra:"Nivel de misterio: ninguno. El verdadero plan secreto es cuánto nos vamos a reír durante el camino."
-}
+/* =====================================================================
+   Ramo de 12 rosas para Valeria — dibujado trazo a trazo
+   ===================================================================== */
+(() => {
+"use strict";
+
+const NS = "http://www.w3.org/2000/svg";
+const $  = (id) => document.getElementById(id);
+
+const CAPAS = {
+  fondo:     $("gBrilloFondo"),
+  tallos:    $("gTallos"),
+  hojas:     $("gHojas"),
+  rosas:     $("gRosas"),
+  papel:     $("gPapel"),
+  cinta:     $("gCinta"),
+  destellos: $("gDestellos")
+};
+
+let ejecucion = 0;      // identificador de la corrida actual
+let velocidad = 1;      // 1 = normal, 2 = rápido
+
+const NUDO = { x: 400, y: 800 };   // punto donde se atan todos los tallos
+
+/* Posición de cada una de las 12 rosas (de atrás hacia adelante) */
+const ROSAS = [
+  { x: 305, y: 252, r: 43, giro:  8 },
+  { x: 400, y: 228, r: 46, giro: 24 },
+  { x: 495, y: 252, r: 43, giro: 40 },
+
+  { x: 228, y: 344, r: 44, giro: 12 },
+  { x: 342, y: 332, r: 47, giro: 32 },
+  { x: 458, y: 332, r: 47, giro: 52 },
+  { x: 572, y: 344, r: 44, giro: 68 },
+
+  { x: 196, y: 442, r: 42, giro: 20 },
+  { x: 300, y: 432, r: 45, giro: 44 },
+  { x: 400, y: 426, r: 47, giro: 16 },
+  { x: 500, y: 432, r: 45, giro: 60 },
+  { x: 604, y: 442, r: 42, giro: 36 }
 ];
 
-const cards=document.getElementById("cards");
-function stars(r){return "★".repeat(r)+"☆".repeat(5-r);}
-function renderCards(){
- cards.innerHTML=citas.map(c=>`<article class="card">
-  <div class="card-image-wrap"><img class="card-image" src="${c.image}" alt="${c.title}" onerror="this.style.objectFit='contain'"><span class="card-number">0${c.id}</span></div>
-  <div class="card-body"><div class="stars">${stars(c.rating)}</div><h3>${c.title}</h3><p>${c.short}</p>
-  <div class="card-footer"><span class="eyebrow">29 · AGO</span><button class="open-btn" onclick="openModal(${c.id})">Ver la cita →</button></div></div>
- </article>`).join("");
+/* ---------------------------------------------------------------- utilidades */
+const esperar = (ms) => new Promise((r) => setTimeout(r, ms / velocidad));
+
+function crear(tag, attrs = {}) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  return e;
 }
-function openModal(id){
- const c=citas.find(x=>x.id===id);
- document.getElementById("modalNumber").textContent=`CITA 0${c.id}`;
- document.getElementById("modalImage").src=c.image;
- document.getElementById("modalImage").alt=c.title;
- document.getElementById("modalTitle").textContent=c.title;
- document.getElementById("modalStars").textContent=stars(c.rating);
- document.getElementById("modalVerdict").textContent=c.verdict;
- document.getElementById("modalQuote").textContent=`“${c.quote}”`;
- document.getElementById("modalDate").textContent=c.date;
- document.getElementById("modalTime").textContent=c.time;
- document.getElementById("modalPlace").textContent=c.place;
- document.getElementById("modalDescription").textContent=c.description;
- document.getElementById("modalAddress").textContent=c.address;
- document.getElementById("modalFeatures").innerHTML=c.features.map(x=>`<li>${x}</li>`).join("");
- document.getElementById("modalExtra").textContent=c.extra;
- const d=.012;
- document.getElementById("modalMap").src=`https://www.openstreetmap.org/export/embed.html?bbox=${c.lng-d}%2C${c.lat-d}%2C${c.lng+d}%2C${c.lat+d}&layer=mapnik&marker=${c.lat}%2C${c.lng}`;
- document.getElementById("modalDirections").href=`https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}`;
- document.getElementById("modal").classList.add("show");
- document.getElementById("modal").setAttribute("aria-hidden","false");
- document.body.style.overflow="hidden";
+
+function revisar(id) {
+  if (id !== ejecucion) throw new Error("reinicio");
 }
-function closeModal(){
- document.getElementById("modal").classList.remove("show");
- document.getElementById("modal").setAttribute("aria-hidden","true");
- document.body.style.overflow="";
+
+/**
+ * Dibuja un path "a mano": primero la línea y después el relleno.
+ * @param {SVGElement} capa   grupo donde se añade
+ * @param {string}     d      datos del path
+ * @param {object}     o      { trazo, ancho, relleno, dur, espera, opacidad }
+ */
+function trazar(capa, d, o = {}) {
+  const p = crear("path", {
+    d,
+    fill: o.relleno || "none",
+    stroke: o.trazo || "#ffffff",
+    "stroke-width": o.ancho != null ? o.ancho : 2,
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+  });
+  if (o.opacidad != null) p.setAttribute("opacity", o.opacidad);
+  if (o.relleno) p.style.fillOpacity = 0;
+  capa.appendChild(p);
+
+  let largo = 0;
+  try { largo = p.getTotalLength(); } catch (e) { largo = 300; }
+
+  const dur = (o.dur || Math.max(200, Math.min(1500, largo * 2.1))) / velocidad;
+  p.style.strokeDasharray  = largo;
+  p.style.strokeDashoffset = largo;
+  p.style.transition = `stroke-dashoffset ${dur}ms cubic-bezier(.45,.05,.35,1)`;
+  requestAnimationFrame(() => { p.style.strokeDashoffset = "0"; });
+
+  if (o.relleno) {
+    setTimeout(() => {
+      p.style.transition += `, fill-opacity ${dur * 0.9}ms ease`;
+      p.style.fillOpacity = o.rellenoOpacidad != null ? o.rellenoOpacidad : 1;
+    }, dur * 0.5);
+  }
+
+  const pausa = dur * (o.espera != null ? o.espera : 0.45);
+  return { elemento: p, promesa: new Promise((r) => setTimeout(r, pausa)) };
 }
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-renderCards();
+
+const trazarYEsperar = (capa, d, o) => trazar(capa, d, o).promesa;
+
+function aparecer(capa, tag, attrs, dur = 900, opacidadFinal = 1) {
+  const e = crear(tag, attrs);
+  e.style.opacity = 0;
+  e.style.transition = `opacity ${dur / velocidad}ms ease`;
+  capa.appendChild(e);
+  requestAnimationFrame(() => { e.style.opacity = opacidadFinal; });
+  return e;
+}
+
+/* ------------------------------------------------------------- geometría */
+
+/** Pétalo / hoja: forma de lágrima que sale del centro hacia un ángulo. */
+function petalo(cx, cy, grados, largo, ancho) {
+  const a = (grados * Math.PI) / 180;
+  const cos = Math.cos(a), sen = Math.sin(a);
+  const tx = cx + cos * largo, ty = cy + sen * largo;
+  const px = -sen * ancho,     py = cos * ancho;
+  const mx = cx + cos * largo * 0.45, my = cy + sen * largo * 0.45;
+  const n = (v) => v.toFixed(1);
+  return `M ${n(cx)} ${n(cy)} ` +
+         `C ${n(mx + px)} ${n(my + py)}, ${n(tx + px * 0.55)} ${n(ty + py * 0.55)}, ${n(tx)} ${n(ty)} ` +
+         `C ${n(tx - px * 0.55)} ${n(ty - py * 0.55)}, ${n(mx - px)} ${n(my - py)}, ${n(cx)} ${n(cy)} Z`;
+}
+
+/** Espiral del corazón de la rosa. */
+function espiral(cx, cy, radio) {
+  let d = "";
+  for (let t = 0; t <= 12.6; t += 0.35) {
+    const r = radio * (0.05 + t * 0.032);
+    const x = cx + Math.cos(t) * r;
+    const y = cy + Math.sin(t) * r * 0.86;
+    d += (d ? " L " : "M ") + x.toFixed(1) + " " + y.toFixed(1);
+  }
+  return d;
+}
+
+/* --------------------------------------------------------------- escena */
+
+async function dibujarTallos(id) {
+  for (let i = 0; i < ROSAS.length; i++) {
+    const r = ROSAS[i];
+    const desvio = (r.x - NUDO.x) * 0.55;
+    const d = `M ${NUDO.x} ${NUDO.y} Q ${NUDO.x + desvio * 0.5} ${(NUDO.y + r.y) / 2} ${r.x} ${r.y + r.r * 0.55}`;
+    trazar(CAPAS.tallos, d, { trazo: "url(#tallo)", ancho: 5.5, dur: 900, espera: 0 });
+    await esperar(95);
+    revisar(id);
+  }
+  await esperar(500);
+}
+
+async function dibujarHojas(id) {
+  const hojas = [
+    { x: 168, y: 470, a: 205, l: 92 }, { x: 632, y: 470, a: -25, l: 92 },
+    { x: 214, y: 516, a: 160, l: 76 }, { x: 586, y: 516, a:  20, l: 76 },
+    { x: 330, y: 500, a: 120, l: 64 }, { x: 470, y: 500, a:  60, l: 64 },
+    { x: 400, y: 512, a:  92, l: 58 }
+  ];
+  for (const h of hojas) {
+    trazar(CAPAS.hojas, petalo(h.x, h.y, h.a, h.l, h.l * 0.3), {
+      trazo: "#2f7a43", ancho: 2, relleno: "#367d45", dur: 620, espera: 0.35
+    });
+    const a = (h.a * Math.PI) / 180;
+    trazar(CAPAS.hojas, `M ${h.x} ${h.y} L ${(h.x + Math.cos(a) * h.l).toFixed(1)} ${(h.y + Math.sin(a) * h.l).toFixed(1)}`,
+      { trazo: "#8cc79a", ancho: 1.2, opacidad: 0.7, dur: 420, espera: 0 });
+    await esperar(160);
+    revisar(id);
+  }
+  await esperar(300);
+}
+
+async function dibujarRosa(id, rosa) {
+  const { x, y, r, giro } = rosa;
+  const g = crear("g", {});
+  CAPAS.rosas.appendChild(g);
+
+  // sombra suave detrás de la flor
+  aparecer(g, "ellipse", { cx: x, cy: y + r * 0.15, rx: r * 1.12, ry: r * 1.02, fill: "#4a0512", opacity: 0.45 }, 500);
+
+  const capas = [
+    { n: 7, largo: r * 1.00, ancho: r * 0.50, giro: 0,  relleno: "#8d0f22", trazo: "#5d0714", dur: 330 },
+    { n: 6, largo: r * 0.76, ancho: r * 0.42, giro: 26, relleno: "#b31230", trazo: "#76091c", dur: 300 },
+    { n: 5, largo: r * 0.54, ancho: r * 0.33, giro: 52, relleno: "#d31b3c", trazo: "#8d0f22", dur: 270 },
+    { n: 4, largo: r * 0.34, ancho: r * 0.24, giro: 78, relleno: "#e8384f", trazo: "#a11227", dur: 240 }
+  ];
+
+  for (const capa of capas) {
+    for (let i = 0; i < capa.n; i++) {
+      const ang = giro + capa.giro + (360 / capa.n) * i;
+      trazar(g, petalo(x, y, ang, capa.largo, capa.ancho), {
+        trazo: capa.trazo, ancho: 1.6, relleno: capa.relleno,
+        dur: capa.dur, espera: 0
+      });
+      await esperar(capa.dur * 0.22);
+      revisar(id);
+    }
+  }
+
+  // corazón en espiral + luz
+  await trazarYEsperar(g, espiral(x, y, r * 0.55), {
+    trazo: "#ffd0d8", ancho: 1.5, opacidad: 0.85, dur: 900, espera: 0.3
+  });
+  aparecer(g, "ellipse", { cx: x, cy: y, rx: r * 1.02, ry: r * 0.96, fill: "url(#luzRosa)" }, 900);
+  revisar(id);
+}
+
+async function dibujarPapel(id) {
+  const atras  = `M 400 812 L 88 508 Q 244 586 400 556 Q 556 586 712 508 Z`;
+  const frente = `M 400 812 L 196 558 Q 400 622 604 558 Z`;
+
+  await trazarYEsperar(CAPAS.papel, atras, {
+    trazo: "#f2f6ff", ancho: 2.4, relleno: "url(#papel)", dur: 1700, espera: 0.75
+  });
+  await trazarYEsperar(CAPAS.papel, frente, {
+    trazo: "#ffffff", ancho: 2.2, relleno: "url(#papelFrente)", dur: 1200, espera: 0.6
+  });
+  revisar(id);
+
+  // pliegues
+  const pliegues = [
+    "M 400 812 L 262 552", "M 400 812 L 538 552",
+    "M 400 812 L 150 534", "M 400 812 L 650 534", "M 400 812 L 400 552"
+  ];
+  for (const d of pliegues) {
+    trazar(CAPAS.papel, d, { trazo: "#c9b26a", ancho: 1.1, opacidad: 0.75, dur: 700, espera: 0 });
+    await esperar(110);
+    revisar(id);
+  }
+
+  // filo dorado del papel
+  trazar(CAPAS.papel, atras,  { trazo: "url(#oro)", ancho: 3, dur: 1500, espera: 0 });
+  await esperar(320);
+  trazar(CAPAS.papel, frente, { trazo: "url(#oro)", ancho: 2.4, dur: 1100, espera: 0 });
+  await esperar(500);
+  revisar(id);
+
+  // filigranas doradas
+  const rizos = [
+    "M 300 640 q 26 -26 52 -4 q 22 20 -6 34 q -24 12 -30 -14",
+    "M 448 662 q 26 -26 52 -4 q 22 20 -6 34 q -24 12 -30 -14",
+    "M 356 726 q 22 -22 44 -3 q 18 17 -5 29 q -20 10 -25 -12"
+  ];
+  for (const d of rizos) {
+    trazar(CAPAS.papel, d, { trazo: "url(#oro)", ancho: 1.8, opacidad: 0.9, dur: 800, espera: 0 });
+    await esperar(150);
+    revisar(id);
+  }
+
+  const puntos = [[262,600],[520,596],[336,672],[470,720],[400,600],[300,712],[498,662],[372,620]];
+  for (const [px, py] of puntos) {
+    aparecer(CAPAS.papel, "circle", { cx: px, cy: py, r: 3.1, fill: "url(#oro)" }, 500, 0.95);
+    await esperar(70);
+    revisar(id);
+  }
+  await esperar(300);
+}
+
+async function dibujarCinta(id) {
+  // lazos
+  const lazoIzq = "M 400 706 C 330 662, 292 702, 326 734 C 352 758, 386 728, 400 706 Z";
+  const lazoDer = "M 400 706 C 470 662, 508 702, 474 734 C 448 758, 414 728, 400 706 Z";
+  await trazarYEsperar(CAPAS.cinta, lazoIzq, { trazo: "#b8892a", ancho: 2, relleno: "url(#oro)", dur: 900, espera: 0.6 });
+  await trazarYEsperar(CAPAS.cinta, lazoDer, { trazo: "#b8892a", ancho: 2, relleno: "url(#oro)", dur: 900, espera: 0.6 });
+  revisar(id);
+
+  // caídas de la cinta
+  trazar(CAPAS.cinta, "M 396 716 C 372 762, 352 790, 318 818 L 336 830 C 372 800, 392 768, 406 726 Z",
+    { trazo: "#b8892a", ancho: 1.8, relleno: "url(#oro)", dur: 900, espera: 0 });
+  await esperar(220);
+  trazar(CAPAS.cinta, "M 404 716 C 428 762, 448 790, 482 818 L 464 830 C 428 800, 408 768, 394 726 Z",
+    { trazo: "#b8892a", ancho: 1.8, relleno: "url(#oro)", dur: 900, espera: 0 });
+  await esperar(520);
+  aparecer(CAPAS.cinta, "ellipse", { cx: 400, cy: 712, rx: 17, ry: 13, fill: "url(#oro)", stroke: "#a87d24", "stroke-width": 1.6 }, 600);
+  revisar(id);
+  await esperar(400);
+
+  // banderola del listón
+  const banda = "M 152 856 Q 400 824 648 856 L 648 914 Q 400 882 152 914 Z";
+  const puntaIzq = "M 152 856 L 104 840 L 118 886 L 104 932 L 152 914 Z";
+  const puntaDer = "M 648 856 L 696 840 L 682 886 L 696 932 L 648 914 Z";
+
+  await trazarYEsperar(CAPAS.cinta, banda, { trazo: "#a87d24", ancho: 2.2, relleno: "url(#oro)", dur: 1500, espera: 0.7 });
+  trazar(CAPAS.cinta, puntaIzq, { trazo: "#a87d24", ancho: 2, relleno: "url(#oro)", dur: 800, espera: 0 });
+  await esperar(200);
+  trazar(CAPAS.cinta, puntaDer, { trazo: "#a87d24", ancho: 2, relleno: "url(#oro)", dur: 800, espera: 0 });
+  await esperar(700);
+  revisar(id);
+
+  // texto del listón
+  const curva = crear("path", { id: "curvaTexto", d: "M 176 890 Q 400 858 624 890", fill: "none" });
+  CAPAS.cinta.appendChild(curva);
+  const texto = crear("text", {
+    "font-family": "'Cormorant Garamond', Georgia, serif",
+    "font-size": "31", "font-weight": "600", "letter-spacing": "0.6",
+    fill: "#7d0b1f"
+  });
+  const tp = crear("textPath", { startOffset: "50%", "text-anchor": "middle" });
+  tp.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#curvaTexto");
+  tp.setAttribute("href", "#curvaTexto");
+  tp.textContent = "Feliz día del amor y la amistad";
+  texto.appendChild(tp);
+  texto.style.opacity = 0;
+  texto.style.transition = `opacity ${1600 / velocidad}ms ease`;
+  CAPAS.cinta.appendChild(texto);
+  requestAnimationFrame(() => { texto.style.opacity = 1; });
+  await esperar(1400);
+  revisar(id);
+}
+
+async function destellosFinales(id) {
+  const puntos = [[150,300],[660,286],[404,150],[236,204],[576,196],[110,420],[692,430],[330,176],[498,168]];
+  for (const [x, y] of puntos) {
+    const g = crear("g", { filter: "url(#resplandor)" });
+    g.style.opacity = 0;
+    g.style.transition = `opacity ${700 / velocidad}ms ease`;
+    g.appendChild(crear("path", {
+      d: `M ${x} ${y - 14} Q ${x + 2} ${y - 2} ${x + 14} ${y} Q ${x + 2} ${y + 2} ${x} ${y + 14} Q ${x - 2} ${y + 2} ${x - 14} ${y} Q ${x - 2} ${y - 2} ${x} ${y - 14} Z`,
+      fill: "#fff5c8"
+    }));
+    CAPAS.destellos.appendChild(g);
+    requestAnimationFrame(() => { g.style.opacity = 0.95; });
+    await esperar(110);
+    revisar(id);
+  }
+  $("dedicatoria").classList.add("visible");
+  soltarCorazones();
+}
+
+/* --------------------------------------------------------- fondo y extras */
+
+function sembrarEstrellas() {
+  const cielo = $("cielo");
+  cielo.innerHTML = "";
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < 160; i++) {
+    const s = document.createElement("div");
+    s.className = "estrella";
+    const t = Math.random() * 2.4 + 0.8;
+    s.style.width = t + "px";
+    s.style.height = t + "px";
+    s.style.left = Math.random() * 100 + "%";
+    s.style.top = Math.random() * 100 + "%";
+    s.style.setProperty("--dur", (2.5 + Math.random() * 4).toFixed(2) + "s");
+    s.style.setProperty("--ret", (Math.random() * 5).toFixed(2) + "s");
+    frag.appendChild(s);
+  }
+  for (let i = 0; i < 7; i++) {
+    const c = document.createElement("div");
+    c.className = "destello-cruz";
+    c.style.left = (5 + Math.random() * 90) + "%";
+    c.style.top = (5 + Math.random() * 80) + "%";
+    c.style.setProperty("--ret", (Math.random() * 6).toFixed(2) + "s");
+    frag.appendChild(c);
+  }
+  cielo.appendChild(frag);
+}
+
+function soltarCorazones() {
+  const cont = $("corazones");
+  cont.innerHTML = "";
+  for (let i = 0; i < 14; i++) {
+    const h = document.createElement("span");
+    h.className = "corazon";
+    h.textContent = "❤";
+    h.style.left = (4 + Math.random() * 92) + "%";
+    h.style.setProperty("--tam", (14 + Math.random() * 20).toFixed(0) + "px");
+    h.style.setProperty("--dur", (8 + Math.random() * 7).toFixed(1) + "s");
+    h.style.setProperty("--ret", (Math.random() * 9).toFixed(1) + "s");
+    cont.appendChild(h);
+  }
+}
+
+/* ------------------------------------------------------------ orquestación */
+
+async function dibujarTodo() {
+  const id = ++ejecucion;
+  Object.values(CAPAS).forEach((c) => { c.innerHTML = ""; });
+  $("corazones").innerHTML = "";
+  $("dedicatoria").classList.remove("visible");
+
+  try {
+    await esperar(700);
+    await dibujarTallos(id);
+    await dibujarHojas(id);
+    for (const rosa of ROSAS) { await dibujarRosa(id, rosa); await esperar(90); }
+    await esperar(400);
+    await dibujarPapel(id);
+    await dibujarCinta(id);
+    await destellosFinales(id);
+  } catch (e) {
+    if (!/reinicio/.test(e.message)) console.error(e);
+  }
+}
+
+$("btnRepetir").addEventListener("click", dibujarTodo);
+$("btnVelocidad").addEventListener("click", (ev) => {
+  velocidad = velocidad === 1 ? 2.2 : 1;
+  const rapido = velocidad !== 1;
+  ev.currentTarget.textContent = rapido ? "Volver a velocidad normal" : "Ir más rápido";
+  ev.currentTarget.setAttribute("aria-pressed", String(rapido));
+});
+
+sembrarEstrellas();
+if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) velocidad = 3;
+dibujarTodo();
+
+})();
